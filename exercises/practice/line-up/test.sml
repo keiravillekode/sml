@@ -50,8 +50,23 @@ val testsuite =
     test "format exceptional ordinal numeral 21"
       (fn _ => format "Washi" 21 |> Expect.equalTo "Washi, you are the 21st customer we serve today. Thank you!"),
 
+      test "format exceptional ordinal numeral 22 ending in nd even though it is a multiple of 11"
+      (fn _ => format "Ingrid" 22 |> Expect.equalTo "Ingrid, you are the 22nd customer we serve today. Thank you!"),
+
+      test "format exceptional ordinal numeral 33 ending in nd even though it is a multiple of 11"
+      (fn _ => format "Mario" 33 |> Expect.equalTo "Mario, you are the 33rd customer we serve today. Thank you!"),
+
+      test "format exceptional ordinal numeral 52 ending in nd even though it is a multiple of 13"
+      (fn _ => format "Quentin" 52 |> Expect.equalTo "Quentin, you are the 52nd customer we serve today. Thank you!"),
+
     test "format exceptional ordinal numeral 62"
       (fn _ => format "Nayra" 62 |> Expect.equalTo "Nayra, you are the 62nd customer we serve today. Thank you!"),
+
+    test "format exceptional ordinal numeral 72 ending in nd even though it is a multiple of 12"
+      (fn _ => format "Ugo" 72 |> Expect.equalTo "Ugo, you are the 72nd customer we serve today. Thank you!"),
+
+    test "format exceptional ordinal numeral 91 ending in nd even though it is a multiple of 13"
+      (fn _ => format "Boris" 91 |> Expect.equalTo "Boris, you are the 91st customer we serve today. Thank you!"),
 
     test "format exceptional ordinal numeral 100"
       (fn _ => format "John" 100 |> Expect.equalTo "John, you are the 100th customer we serve today. Thank you!"),
@@ -63,7 +78,10 @@ val testsuite =
       (fn _ => format "Knud" 112 |> Expect.equalTo "Knud, you are the 112th customer we serve today. Thank you!"),
 
     test "format exceptional ordinal numeral 123"
-      (fn _ => format "Yma" 123 |> Expect.equalTo "Yma, you are the 123rd customer we serve today. Thank you!")
+      (fn _ => format "Yma" 123 |> Expect.equalTo "Yma, you are the 123rd customer we serve today. Thank you!"),
+
+    test "format exceptional ordinal numeral 972 ending in nd even though it is a multiple of 12"
+      (fn _ => format "Elias" 972 |> Expect.equalTo "Elias, you are the 972nd customer we serve today. Thank you!")
   ]
 
 val _ = Test.run testsuite
